@@ -23,21 +23,20 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
         ],
     }
 
-    const cssLoaderWithModules = {
-        loader: "css-loader",
-        options: {
-            modules: {
-                localIdentName: isDevMode ? '[path][name]__[local]' : '[hash:base64:8]'
-            },
-        },
-    }
-
-    const scssLoader = {
-        test: /\.s[ac]ss$/i,
+    const cssLoader = {
+        test: /\.module.css$/,
         use: [
-            isDevMode ? "style-loader" : MiniCssExtractPlugin.loader,
-            cssLoaderWithModules,
-            "sass-loader",
+            {
+                loader: MiniCssExtractPlugin.loader,
+            },
+            {
+                loader: "css-loader",
+                options: {
+                    modules: {
+                        localIdentName: isDevMode ? '[path][name]__[local]' : '[hash:base64:8]'
+                    },
+                },
+            },
         ],
     }
 
@@ -51,7 +50,7 @@ export function buildLoaders(options: BuildOptions): ModuleOptions['rules'] {
 
     return [
         assetLoader,
-        scssLoader,
+        cssLoader,
         babelLoader,
         svgrLoader
     ]

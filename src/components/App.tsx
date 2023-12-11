@@ -1,34 +1,24 @@
-import {useState} from "react";
-import s from './App.module.scss'
-import {Link, Outlet} from "react-router-dom";
-import Png from '@/assets/ping.png'
-import Inst from '@/assets/Instagram_black.svg'
+import s from './App.module.css';
+import Facebook from '@/assets/icons/facebook.svg';
+import image from '../assets/images/IMAGE.jpg';
 
 export const App = () => {
-    const [count, setCount] = useState(0)
-
-    const incr = () => {
-        setCount(prevState => prevState + 1)
-    }
-
     return (
         <div>
+            <picture>
+                <source srcSet={''} type="image/webp" />
+                <source srcSet={''} type="image/jpeg" />
+                <img src="" alt="some img" />
+            </picture>
+
             <div>
-                <img width={100} height={100} src={Png} alt="png"/>
+                <h3>Image</h3>
+                <img width={100} height={100} src={image} alt={'image'} />
             </div>
 
             <div>
-               <Inst width={150} height={150} fill={'red'} stroke={'red'} />
+                <Facebook height={30} width={30} stroke={'black'} className={s.svg} />
             </div>
-
-            <Link to={'/about'}>about</Link>
-            <br/>
-            <Link to={'/shop'}>shop</Link>
-
-            <h1>Count: {count}</h1>
-            <button className={s.button} onClick={incr}>incr</button>
-
-            <Outlet />
         </div>
     );
 };

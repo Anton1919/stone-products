@@ -12,6 +12,10 @@ export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
     const {paths, analyzer, isDevMode, isProdMode} = options
 
     const plugins: Configuration['plugins'] = [
+        new MiniCssExtractPlugin({
+            filename: 'css/[name].[contenthash:8].css',
+            chunkFilename: 'css/[name].[contenthash:8].css'
+        }),
         new HtmlWebpackPlugin({template: paths.html}),
     ]
 
@@ -22,10 +26,6 @@ export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
     }
 
     if (isProdMode) {
-        plugins.push(new MiniCssExtractPlugin({
-            filename: 'css/[name].[contenthash:8].css',
-            chunkFilename: 'css/[name].[contenthash:8].css'
-        }))
         plugins.push(new CopyPlugin({
             patterns: [
                 {
@@ -33,7 +33,6 @@ export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
                     to: paths.output
                     // если хотим создать папку в build то вот так надо
                     // to: path.resolve(paths.output, 'some dir')
-
                 }
             ]
         }))
