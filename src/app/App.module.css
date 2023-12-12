@@ -1,0 +1,14 @@
+.button {
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+
+    padding: 10px;
+
+    color: red;
+}
+
+.svg:hover {
+    stroke: red;
+}

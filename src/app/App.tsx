@@ -1,6 +1,6 @@
 import s from './App.module.css';
-import Facebook from '@/assets/icons/facebook.svg';
-import image from '../assets/images/IMAGE.jpg';
+import Facebook from '../shared/assets/icons/facebook.svg';
+import image from '../shared/assets/images/IMAGE.jpg';
 
 export const App = () => {
     return (

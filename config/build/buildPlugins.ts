@@ -1,12 +1,12 @@
-import HtmlWebpackPlugin from "html-webpack-plugin";
-import MiniCssExtractPlugin, {Configuration} from "mini-css-extract-plugin";
-import webpack from "webpack";
-import {BuildOptions} from "./types/types";
-import {BundleAnalyzerPlugin} from "webpack-bundle-analyzer";
-import ForkTsCheckerWebpackPlugin from "fork-ts-checker-webpack-plugin";
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import MiniCssExtractPlugin, {Configuration} from 'mini-css-extract-plugin';
+import webpack from 'webpack';
+import {BuildOptions} from './types/types';
+import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
+import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
-import CopyPlugin from "copy-webpack-plugin";
-import path from "path";
+import CopyPlugin from 'copy-webpack-plugin';
+import path from 'path';
 
 export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
     const {paths, analyzer, isDevMode, isProdMode} = options
@@ -26,16 +26,16 @@ export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
     }
 
     if (isProdMode) {
-        plugins.push(new CopyPlugin({
-            patterns: [
-                {
-                    from: path.resolve(paths.public, 'favicon.png'),
-                    to: paths.output
-                    // если хотим создать папку в build то вот так надо
-                    // to: path.resolve(paths.output, 'some dir')
-                }
-            ]
-        }))
+        // plugins.push(new CopyPlugin({
+        //     patterns: [
+        //         {
+        //             from: path.resolve(paths.public, 'favicon.png'),
+        //             to: paths.output
+        //             // если хотим создать папку в build то вот так надо
+        //             // to: path.resolve(paths.output, 'some dir')
+        //         }
+        //     ]
+        // }))
     }
 
     if (analyzer) {
