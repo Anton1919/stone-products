@@ -5,8 +5,6 @@ import {BuildOptions} from './types/types';
 import {BundleAnalyzerPlugin} from 'webpack-bundle-analyzer';
 import ForkTsCheckerWebpackPlugin from 'fork-ts-checker-webpack-plugin';
 import ReactRefreshWebpackPlugin from '@pmmmwh/react-refresh-webpack-plugin'
-import CopyPlugin from 'copy-webpack-plugin';
-import path from 'path';
 
 export function buildPlugins(options: BuildOptions): Configuration['plugins'] {
     const {paths, analyzer, isDevMode, isProdMode} = options

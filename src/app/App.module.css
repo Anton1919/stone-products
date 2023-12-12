@@ -1,14 +1,5 @@
-.button {
-    position: relative;
-
-    display: flex;
-    justify-content: center;
-
-    padding: 10px;
-
-    color: red;
-}
-
-.svg:hover {
-    stroke: red;
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
 }
