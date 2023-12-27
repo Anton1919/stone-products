@@ -1,4 +1,30 @@
 .app {
-
+// для адаптации шрифтов можно использовать формулу:
+  //  font-size: calc( (100vw - Vmin) / (Vmax - Vmin) * (Fmax - Fmin) + Fmin);
+  // https://habr.com/ru/articles/310186/
+  font-size: calc( (100vw - 360px) / (1920 - 360) * (50 - 25) + 25);
 }
 
+// для бекграугда например для div блока
+ .background-adaptive {
+   border: 1px solid black;
+
+   background-image: url("image");
+   background-repeat: no-repeat;
+   background-size: cover;
+   background-position: center; // если нужно то задаем
+
+   min-height: 600px;
+   //max-width: 800px; // если нужно то задаем
+   width: 100%;
+ }
+
+ // для контентных картинок для тегов img
+.img-content {
+  height: 600px;
+  max-width: 600px;
+  width: 100%;
+  object-fit: cover;
+}
+
+ // для картинок сделай webp формат
