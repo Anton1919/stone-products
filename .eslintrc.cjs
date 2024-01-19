@@ -13,6 +13,7 @@ module.exports = {
   plugins: ['react-refresh','prettier'],
   rules: {
     'prettier/prettier': 'warn',
+    '@typescript-eslint/no-unused-vars': 'warn',
     '@typescript-eslint/ban-ts-comment': 'warn',
     'react-refresh/only-export-components': [
       'warn',

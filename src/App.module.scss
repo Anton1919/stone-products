@@ -27,4 +27,39 @@
   object-fit: cover;
 }
 
- // для картинок сделай webp формат
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.mainImg {
+  display: flex;
+  flex-direction: column;
+  height: 200px;
+  width: 200px;
+  & img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.listImg {
+  display: flex;
+  gap: 10px;
+  height: 200px;
+  min-width: 200px;
+
+  & .imgWrapper {
+    height: 200px;
+    width: 200px;
+
+    & img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+}
