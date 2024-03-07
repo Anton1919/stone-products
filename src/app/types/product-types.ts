@@ -1,7 +1,8 @@
 export type ProductType = {
+  _id: string;
   id: string;
   mainImage: string;
-  images: string[];
+  images: { id: string; image: string }[];
   name: string;
   price: string;
   modelNumber: string;

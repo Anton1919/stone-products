@@ -1,16 +1,9 @@
-@import url('./variables/global.scss');
-
 *,
 ::after,
 ::before {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-}
-
-body {
-  min-width: 360px; // будет уменьшаться контент при размере экрана меньше 360рх,
-  // контент не будет вылезать за рамки и не будет горизонтального скрола
 }
 
 input,
